@@ -2,44 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg: #e0f7fa;
+      --card: #ffffff;
+      --text: #222;
+      --accent: #0077ff;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f1f5f9;
+      --accent: #38bdf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    /* Skills */
+    .skills span {
+      display: inline-block;
+      background: var(--card);
+      padding: 8px 15px;
+      margin: 5px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Projects */
+    .project {
+      background: var(--card);
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.03);
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.7;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
 
+<!-- Navbar -->
+<nav>
+  <div><b>My Portfolio</b></div>
+
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <button onclick="toggleDark()">🌙</button>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
   <h1>Hi, I'm Aarya 👋</h1>
-  <p>I am a Web Development Learner</p>
+  <p>Web Development Learner | Frontend Enthusiast</p>
+</div>
 
+<!-- About -->
+<section id="about">
   <h2>About Me</h2>
-  <p>I love creating websites using HTML, CSS and JavaScript.</p>
+  <p>I am a passionate web development learner focused on building real-world projects using HTML, CSS and JavaScript.</p>
+</section>
 
+<!-- Skills -->
+<section id="skills">
   <h2>Skills</h2>
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-  </ul>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>GitHub</span>
+  </div>
+</section>
 
+<!-- Projects -->
+<section id="projects">
   <h2>Projects</h2>
 
-<ul>
-  <li>
-    <b>MoodMate AI – Study & Music Recommender</b><br>
-    A smart AI-based web application that analyzes user mood and recommends suitable study material and music. 
-    It enhances productivity by helping users stay focused and motivated during study sessions.
-  </li>
+  <div class="project">
+    <b>MoodMate AI – Study & Music Recommender</b>
+    <p>AI-based system that suggests study material and music based on user mood to improve focus and productivity.</p>
+    <a href="#">View Project</a>
+  </div>
 
-  <br>
+  <div class="project">
+    <b>Portfolio Website</b>
+    <p>Responsive personal portfolio website built using HTML, CSS, and JavaScript.</p>
+    <a href="#">View Project</a>
+  </div>
+</section>
 
-  <li>
-    <b>Portfolio Website</b><br>
-    A personal responsive portfolio website created using HTML, CSS, and JavaScript to showcase my skills, projects, and contact information.
-  </li>
-</ul>
+<!-- Contact -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>Email: yourmail@example.com</p>
+</section>
 
-  <h2>Contact</h2>
-  <p>Email: aaryaawasthi06@gmail.com</p>
+<!-- Footer -->
+<footer>
+  © 2026 My Portfolio | Built with HTML, CSS & JavaScript
+</footer>
 
-  <script src="script.js"></script>
+<!-- Script -->
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
 </body>
 </html>
